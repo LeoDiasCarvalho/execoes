@@ -52,6 +52,9 @@ public class Programa {
 		catch(ExecoesDeDominio e) {
 			System.out.println("Erro na reserva - " + e.getMessage());
 		}
+		catch(RuntimeException e) {
+			System.out.println("Erro inesperado!");
+		}
 		sc.close();
 	}
 }

@@ -29,8 +29,9 @@ public class Reserva {
 	public Reserva(int numeroQuarto, Date entrada, Date saida) throws ExecoesDeDominio {
 		if(entrada.before(agora) || saida.before(agora)) {
 			throw new ExecoesDeDominio("data da reserva deve ser futura!");
+		}else if(saida.after(entrada)){
+			throw new ExecoesDeDominio("data de saida deve ser posterior a de entrada!");
 		}else {
-		
 			this.numeroQuarto = numeroQuarto;
 			this.entrada = entrada;
 			this.saida = saida;
